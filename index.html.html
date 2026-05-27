@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEST SMPIT Fitrah Hanniah</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(12px);
+z-index:999;
+border-bottom:1px solid rgba(212,175,55,0.15);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.logo img{
+width:58px;
+height:58px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #d4af37;
+}
+
+.logo-text h1{
+font-size:32px;
+color:#d4af37;
+line-height:1;
+}
+
+.logo-text span{
+font-size:12px;
+color:#ddd;
+}
+
+nav{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+/* PAGE */
+
+.page{
+display:none;
+min-height:100vh;
+padding:130px 8% 80px;
+animation:fadePage .6s ease;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes fadePage{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* HERO */
+
+.hero{
+width:100%;
+min-height:90vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.82)
+),
+
+url('images/banner.jpeg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
+
+border-radius:30px;
+
+padding:0 7%;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero-content h2{
+font-size:72px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.hero-content p{
+font-size:18px;
+color:#ddd;
+line-height:1.8;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 34px;
+border:1px solid #d4af37;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:#d4af37;
+color:black;
+transform:translateY(-4px);
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.title h2{
+font-size:42px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.title p{
+color:#ccc;
+}
+
+/* CARD */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+padding:22px;
+border-radius:22px;
+border:1px solid rgba(212,175,55,0.18);
+transition:.3s;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(212,175,55,0.12);
+}
+
+.card img{
+width:100%;
+height:auto;
+max-height:420px;
+object-fit:contain;
+border-radius:18px;
+margin-bottom:15px;
+background:#000;
+display:block;
+}
+
+.card h3{
+color:#d4af37;
+margin-bottom:12px;
+font-size:22px;
+}
+
+.card p{
+color:#ccc;
+line-height:1.7;
+}
+
+/* PROFILE */
+
+.division-block{
+margin-bottom:80px;
+}
+
+.division-block h2{
+font-size:34px;
+color:#d4af37;
+text-align:center;
+margin-bottom:30px;
+}
+
+.profile-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.profile-card{
+background:#111;
+padding:20px;
+border-radius:24px;
+text-align:center;
+border:1px solid rgba(212,175,55,0.18);
+transition:.3s;
+overflow:hidden;
+}
+
+.profile-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(212,175,55,0.12);
+}
+
+.profile-card img{
+width:100%;
+height:auto;
+max-height:360px;
+object-fit:contain;
+border-radius:18px;
+margin-bottom:15px;
+background:#000;
+display:block;
+}
+
+.profile-card h3{
+color:#d4af37;
+margin-bottom:6px;
+font-size:22px;
+}
+
+.member-name{
+display:block;
+font-size:15px;
+font-weight:bold;
+color:#fff;
+margin-bottom:12px;
+}
+
+.profile-card p{
+color:#ccc;
+line-height:1.6;
+font-size:14px;
+}
+
+/* FEEDBACK */
+
+.feedback-frame{
+max-width:720px;
+margin:auto;
+padding:3px;
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#d4af37,
+rgba(212,175,55,0.15),
+#d4af37
+);
+
+box-shadow:
+0 0 45px rgba(212,175,55,0.15);
+}
+
+.feedback-frame iframe{
+width:100%;
+height:500px;
+border:none;
+border-radius:28px;
+background:#111;
+}
+
+/* FOOTER */
+
+footer{
+padding:35px;
+text-align:center;
+background:#000;
+border-top:1px solid rgba(212,175,55,0.15);
+color:#999;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+justify-content:center;
+}
+
+.hero{
+padding-top:40px;
+}
+
+.hero-content h2{
+font-size:46px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-content h2{
+font-size:38px;
+}
+
+.title h2{
+font-size:30px;
+}
+
+.feedback-frame iframe{
+height:650px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+
+<img src="images/logo.jpeg">
+
+<div class="logo-text">
+
+<h1>BEST</h1>
+
+<span>
+BADAN EKSEKUTIF SISWA TERPADU<br>
+SMPIT FITRAH HANNIAH
+</span>
+
+</div>
+
+</div>
+
+<nav>
+
+<a onclick="showPage('beranda')">BERANDA</a>
+<a onclick="showPage('tentang')">TENTANG</a>
+<a onclick="showPage('program')">PROGRAM</a>
+<a onclick="showPage('prestasi')">PRESTASI</a>
+<a onclick="showPage('event')">EVENT</a>
+<a onclick="showPage('kepengurusan')">KEPENGURUSAN</a>
+<a onclick="showPage('saran')">KRITIK & SARAN</a>
+
+</nav>
+
+</header>
+
+<!-- BERANDA -->
+
+<section id="beranda" class="page active">
+
+<div class="hero">
+
+<div class="hero-content">
+
+<h2>
+GENERASI<br>
+<span class="gold">BERAKHLAK</span><br>
+DAN BERPRESTASI
+</h2>
+
+<p>
+BEST SMPIT Fitrah Hanniah hadir sebagai organisasi siswa
+yang aktif, kreatif, islami, dan mampu menjadi wadah
+pengembangan karakter serta kepemimpinan siswa.
+</p>
+
+<a class="btn" onclick="showPage('tentang')">
+SELENGKAPNYA
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TENTANG -->
+
+<section id="tentang" class="page">
+
+<div class="title">
+<h2>Tentang Kami</h2>
+<p>Mengenal organisasi BEST</p>
+</div>
+
+<div class="card">
+
+<h3>Profil Organisasi</h3>
+
+<p>
+BEST atau Badan Eksekutif Siswa Terpadu merupakan organisasi
+siswa SMPIT Fitrah Hanniah yang bertujuan membangun
+karakter islami, jiwa kepemimpinan, kreativitas,
+dan semangat kebersamaan antar siswa.
+</p>
+
+</div>
+
+</section>
+
+<!-- PROGRAM -->
+
+<section id="program" class="page">
+
+<div class="title">
+<h2>Program Organisasi</h2>
+<p>Program unggulan BEST</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Iman & Taqwa</h3>
+<p>Kajian islami dan kegiatan keagamaan siswa.</p>
+</div>
+
+<div class="card">
+<h3>Ilmu & Prestasi</h3>
+<p>Mendorong siswa aktif dalam akademik dan perlombaan.</p>
+</div>
+
+<div class="card">
+<h3>Akhlak & Kepedulian</h3>
+<p>Membentuk siswa disiplin dan peduli sesama.</p>
+</div>
+
+<div class="card">
+<h3>Leadership</h3>
+<p>Melatih kepemimpinan dan kerja sama antar siswa.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRESTASI -->
+
+<section id="prestasi" class="page">
+
+<div class="title">
+<h2>Prestasi</h2>
+<p>Pencapaian dan kebanggaan siswa</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="images/ldko.jpg">
+
+<h3>Prestasi Akademik</h3>
+
+<p>
+Siswa aktif mengikuti perlombaan tingkat sekolah
+maupun luar sekolah.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/ldko.jpg">
+
+<h3>Prestasi Keagamaan</h3>
+
+<p>
+Berprestasi dalam tahfidz,
+ceramah, dan lomba islami.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EVENT -->
+
+<section id="event" class="page">
+
+<div class="title">
+<h2>Event Organisasi</h2>
+<p>Dokumentasi kegiatan BEST</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="images/ldko.jpg">
+
+<h3>Kegiatan LDKO</h3>
+
+<p>
+Melatih kepemimpinan, kedisiplinan,
+dan kerja sama antar siswa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- KEPENGURUSAN -->
+
+<section id="kepengurusan" class="page">
+
+<div class="title">
+<h2>Kepengurusan 2026/2027</h2>
+<p>Struktur Pengurus BEST SMPIT Fitrah Hanniah</p>
+</div>
+
+<!-- TIM INTI -->
+
+<div class="division-block">
+
+<h2>Divisi Tim Inti</h2>
+
+<div class="profile-grid">
+
+<div class="profile-card">
+<img src="images/ketua.jpeg">
+<h3>Ketua</h3>
+<span class="member-name">Nama Ketua</span>
+<p>Memimpin seluruh kegiatan organisasi BEST.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/wakil.jpeg">
+<h3>Wakil Ketua</h3>
+<span class="member-name">Nama Wakil Ketua</span>
+<p>Membantu ketua mengoordinasikan organisasi.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/sekretaris1.jpeg">
+<h3>Sekretaris 1</h3>
+<span class="member-name">Nama Sekretaris</span>
+<p>Mengelola administrasi organisasi.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/bendahara1.jpeg">
+<h3>Bendahara 1</h3>
+<span class="member-name">Nama Bendahara 1</span>
+<p>Mengelola keuangan organisasi.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/bendahara2.jpeg">
+<h3>Bendahara 2</h3>
+<span class="member-name">Nama Bendahara 2</span>
+<p>Membantu laporan keuangan organisasi.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- DIVISI KEAGAMAAN -->
+
+<div class="division-block">
+
+<h2>Divisi Keagamaan</h2>
+
+<div class="profile-grid">
+
+<div class="profile-card">
+<img src="images/keagamaan-ketua.jpeg">
+<h3>Ketua Bidang</h3>
+<span class="member-name">Nama Ketua Bidang</span>
+<p>Memimpin Divisi Keagamaan.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/keagamaan-anggota1.jpeg">
+<h3>Anggota 1</h3>
+<span class="member-name">Nama Anggota 1</span>
+<p>Mendukung program kerja divisi.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/keagamaan-anggota2.jpeg">
+<h3>Anggota 2</h3>
+<span class="member-name">Nama Anggota 2</span>
+<p>Membantu kegiatan divisi.</p>
+</div>
+
+<div class="profile-card">
+<img src="images/keagamaan-anggota3.jpeg">
+<h3>Anggota 3</h3>
+<span class="member-name">Nama Anggota 3</span>
+<p>Berperan aktif dalam divisi.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- DIVISI 2 -->
+<div class="division-block">
+<h2>Divisi Keamanan</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/keamanan-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Keamanan.</p></div>
+<div class="profile-card"><img src="images/keamanan-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Keamanan.</p></div>
+<div class="profile-card"><img src="images/keamanan-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Keamanan.</p></div>
+<div class="profile-card"><img src="images/keamanan-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Keamanan.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 3 -->
+<div class="division-block">
+<h2>Divisi Seni dan Budaya</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/seni-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Seni dan Budaya.</p></div>
+<div class="profile-card"><img src="images/seni-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Seni dan Budaya.</p></div>
+<div class="profile-card"><img src="images/seni-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Seni dan Budaya.</p></div>
+<div class="profile-card"><img src="images/seni-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Seni dan Budaya.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 4 -->
+<div class="division-block">
+<h2>Divisi Luar Dalam Negeri</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/ldn-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Luar Dalam Negeri.</p></div>
+<div class="profile-card"><img src="images/ldn-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Luar Dalam Negeri.</p></div>
+<div class="profile-card"><img src="images/ldn-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Luar Dalam Negeri.</p></div>
+<div class="profile-card"><img src="images/ldn-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Luar Dalam Negeri.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 5 -->
+<div class="division-block">
+<h2>Divisi Keperempuanan</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/keperempuanan-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Keperempuanan.</p></div>
+<div class="profile-card"><img src="images/keperempuanan-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Keperempuanan.</p></div>
+<div class="profile-card"><img src="images/keperempuanan-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Keperempuanan.</p></div>
+<div class="profile-card"><img src="images/keperempuanan-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Keperempuanan.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 6 -->
+<div class="division-block">
+<h2>Divisi Menpora</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/menpora-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Menpora.</p></div>
+<div class="profile-card"><img src="images/menpora-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Menpora.</p></div>
+<div class="profile-card"><img src="images/menpora-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Menpora.</p></div>
+<div class="profile-card"><img src="images/menpora-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Menpora.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 7 -->
+<div class="division-block">
+<h2>Divisi Kesehatan</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/kesehatan-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Kesehatan.</p></div>
+<div class="profile-card"><img src="images/kesehatan-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Kesehatan.</p></div>
+<div class="profile-card"><img src="images/kesehatan-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Kesehatan.</p></div>
+<div class="profile-card"><img src="images/kesehatan-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Kesehatan.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 8 -->
+<div class="division-block">
+<h2>Divisi Keilmuan dan Literasi</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/literasi-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Keilmuan dan Literasi.</p></div>
+<div class="profile-card"><img src="images/literasi-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Keilmuan dan Literasi.</p></div>
+<div class="profile-card"><img src="images/literasi-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Keilmuan dan Literasi.</p></div>
+<div class="profile-card"><img src="images/literasi-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Keilmuan dan Literasi.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 9 -->
+<div class="division-block">
+<h2>Divisi Sumber Daya Manusia</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/sdm-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Sumber Daya Manusia.</p></div>
+<div class="profile-card"><img src="images/sdm-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Sumber Daya Manusia.</p></div>
+<div class="profile-card"><img src="images/sdm-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Sumber Daya Manusia.</p></div>
+<div class="profile-card"><img src="images/sdm-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Sumber Daya Manusia.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 10 -->
+<div class="division-block">
+<h2>Divisi Kewirausahaan</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/kewirausahaan-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Kewirausahaan.</p></div>
+<div class="profile-card"><img src="images/kewirausahaan-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Kewirausahaan.</p></div>
+<div class="profile-card"><img src="images/kewirausahaan-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Kewirausahaan.</p></div>
+<div class="profile-card"><img src="images/kewirausahaan-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Kewirausahaan.</p></div>
+</div>
+</div>
+
+<!-- DIVISI 11 -->
+<div class="division-block">
+<h2>Divisi Komunikasi dan Digitalisasi</h2>
+<div class="profile-grid">
+<div class="profile-card"><img src="images/digitalisasi-ketua.jpeg"><h3>Ketua Bidang</h3><span class="member-name">Nama Ketua Bidang</span><p>Bertanggung jawab memimpin Divisi Komunikasi dan Digitalisasi.</p></div>
+<div class="profile-card"><img src="images/digitalisasi-anggota1.jpeg"><h3>Anggota 1</h3><span class="member-name">Nama Anggota 1</span><p>Mendukung program kerja Divisi Komunikasi dan Digitalisasi.</p></div>
+<div class="profile-card"><img src="images/digitalisasi-anggota2.jpeg"><h3>Anggota 2</h3><span class="member-name">Nama Anggota 2</span><p>Membantu kegiatan Divisi Komunikasi dan Digitalisasi.</p></div>
+<div class="profile-card"><img src="images/digitalisasi-anggota3.jpeg"><h3>Anggota 3</h3><span class="member-name">Nama Anggota 3</span><p>Berperan aktif dalam program Divisi Komunikasi dan Digitalisasi.</p></div>
+</div>
+</div>
+
+</section>
+
+<!-- KRITIK SARAN -->
+
+<section id="saran" class="page">
+
+<div class="title">
+<h2>Kritik & Saran</h2>
+<p>Kirim masukan terbaik untuk BEST</p>
+</div>
+
+<div class="feedback-frame">
+
+<iframe
+src="https://form.typeform.com/to/oOY5HMzi">
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 BEST SMPIT FITRAH HANNIAH — ALL RIGHTS RESERVED
+</footer>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll('.page').forEach(page=>{
+page.classList.remove('active');
+});
+
+document.getElementById(id).classList.add('active');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+</script>
+
+</body>
+</html>
